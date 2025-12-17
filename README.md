@@ -23,15 +23,25 @@ cp md2adf /usr/local/bin/md2adf
 
 ## Usage
 
-### From stdin:
+### Direct markdown text:
 ```bash
-echo '# Heading
-**Bold** text' | md2adf
+md2adf '# Heading
+**Bold** text'
 ```
 
 ### From file:
 ```bash
 md2adf input.md
+```
+
+### From stdin:
+```bash
+echo '# Heading' | md2adf
+```
+
+### Show help:
+```bash
+md2adf --help
 ```
 
 ### With acli:
@@ -56,6 +66,13 @@ Implement user authentication with OAuth2.
 - Store tokens securely
 - Handle token refresh"
 
+# Using positional argument
+md2adf "$llm_output" | jq -c '.' | acli jira workitem create \
+  --project MYPROJECT \
+  --type Story \
+  --description-adf -
+
+# Or using stdin
 echo "$llm_output" | md2adf | jq -c '.' | acli jira workitem create \
   --project MYPROJECT \
   --type Story \
