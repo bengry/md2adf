@@ -1,0 +1,26 @@
+{
+  "name": "md2adf",
+  "version": "1.0.0",
+  "description": "Convert Markdown to Atlassian Document Format (ADF) for Jira/Confluence",
+  "module": "index.ts",
+  "type": "module",
+  "bin": {
+    "md2adf": "./index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bengry/md2adf"
+  },
+  "keywords": ["markdown", "adf", "atlassian", "jira", "confluence", "cli"],
+  "author": "Ben Grynhaus",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "marklassian": "^1.1.0"
+  }
+}
